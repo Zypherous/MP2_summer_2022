@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MP2</string>
+    <string name="my_image_desc">12 League champions with the League of Legends Logo in the middle</string>
+    <string name="team_1_button">Point T1</string>
+    <string name="team_2_button">Point T2</string>
+    <string name="team_1_name">Team 1</string>
+    <string name="team_2_name">Team 2</string>
+    <string name="team_1_score">0</string>
+    <string name="team_2_score">0</string>
+    <string name="team">team</string>
+    <string name="win_by">0</string>
+</resources>
