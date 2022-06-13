@@ -1,12 +1,14 @@
 package com.example.mp2;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ShareCompat;
 
 public class Winner extends AppCompatActivity {
     private static final String LOG_TAG = Winner.class.getSimpleName();
@@ -49,4 +51,33 @@ public class Winner extends AppCompatActivity {
         finish();
     }
 
+
+    public void shareText(View view) {
+        Intent intent = getIntent();
+
+        String txt = "My team: " + intent.getStringExtra(MainActivity.WINNER) +
+                ", they won by " + String.valueOf(intent.getIntExtra(MainActivity.WINBY, 0));
+        String mimeType = "text/plain";
+        ShareCompat.IntentBuilder
+                .from(this)
+                .setType(mimeType)
+                .setChooserTitle(R.string.share_text_with)
+                .setText(txt)
+                .startChooser();
+    }
+
+    public void findArena(View view) {
+        String loc = "League of Legends Arena Near Me";
+        Uri addressUri = Uri.parse("geo:0,0?q=" + loc);
+        Intent intent = new Intent(Intent.ACTION_VIEW, addressUri);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            Log.d("Winner", "Can't handle this intent!");
+        }
+    }
+    public void callFriend(View view) {
+        Intent intent = new Intent( Intent.ACTION_DIAL);
+        startActivity(intent);
+    }
 }

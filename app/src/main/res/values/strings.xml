@@ -9,4 +9,10 @@
     <string name="team_2_score">0</string>
     <string name="team">team</string>
     <string name="win_by">0</string>
+    <string name="share_text_with">Share winning team with:</string>
+    <string name="share">share</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="call_friend">Call friend</string>
+    <string name="find_arena">Find league arena</string>
 </resources>
